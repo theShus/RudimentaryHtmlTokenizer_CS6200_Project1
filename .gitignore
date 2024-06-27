@@ -12,8 +12,16 @@ target/
 *.iml
 *.ipr
 
+# Ignore corpus directory
+resources/corpus/
 corpus
+
+# Ignore output directory
+resources/output/
 output
+
+resources/smol_corpus/
+smol_corpus
 
 ### Eclipse ###
 .apt_generated
