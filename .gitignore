@@ -20,6 +20,7 @@ corpus
 resources/output/
 output
 
+# Ignore test directory
 resources/smol_corpus/
 smol_corpus
 

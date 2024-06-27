@@ -1,5 +1,5 @@
-import file_processing.FileProcessor;
-import file_processing.StopWordsLoader;
+import fileProcessing.FileProcessor;
+import fileProcessing.StopWordsLoader;
 
 import java.io.File;
 import java.io.IOException;

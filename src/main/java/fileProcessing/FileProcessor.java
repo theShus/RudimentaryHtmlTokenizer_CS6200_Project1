@@ -1,4 +1,4 @@
-package file_processing;
+package fileProcessing;
 
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.en.PorterStemFilter;

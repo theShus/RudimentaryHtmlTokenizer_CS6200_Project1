@@ -1,4 +1,4 @@
-package file_processing;
+package fileProcessing;
 
 import java.io.IOException;
 import java.nio.file.Files;
