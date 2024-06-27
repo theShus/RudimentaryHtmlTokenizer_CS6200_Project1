@@ -13,6 +13,7 @@ target/
 *.ipr
 
 corpus
+output
 
 ### Eclipse ###
 .apt_generated
