@@ -1,22 +1,11 @@
-# Examples of commands to run the Main class
+# Examples of commands
 
-# Step 1: Tokenizing Documents
-# This command processes the input files in the specified directory.
---input src/main/resources/smol_corpus
+--input src/main/resources/corpus
 
-# After running the initial tokenizing and inverting step, you can interact with the program using the following commands in the CLI loop:
-
-# Example 1: Getting Document Information
-# This command retrieves information about the specified document.
 --doc clueweb12-0000tw-13-04988
 
-# Example 2: Getting Term Information
-# This command retrieves information about the specified term.
 --term contribut
 
-# Example 3: Getting Term Information within a Specific Document
-# This command retrieves the positions of the specified term within the specified document.
 --term contribut --doc clueweb12-0000tw-13-04988
 
-# To exit the program, use the following command:
 exit
