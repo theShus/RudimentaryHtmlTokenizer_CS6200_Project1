@@ -17,11 +17,10 @@ resources/corpus/
 corpus
 
 # Ignore output directory
-resources/output/
-output
+output_1
+output_2
 
 # Ignore test directory
-resources/smol_corpus/
 smol_corpus
 
 ### Eclipse ###
