@@ -1,4 +1,4 @@
-package fileProcessing;
+package documentTokenizing;
 
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.en.PorterStemFilter;
@@ -152,18 +152,19 @@ public class FileProcessor {
                     int termId = termEntry.getKey();
                     List<Integer> positions = termEntry.getValue();
 
-                    // Creating the positions list string
+                    // Creating the positions list string without any delimiter
                     String positionsList = positions.stream()
                             .map(Object::toString)
-                            .collect(Collectors.joining(", ", "[", "]"));
+                            .collect(Collectors.joining(" "));
 
-                    // Construct the line with a fixed number of spaces for alignment
-                    String line = String.format("id: %d    t_termid: %d    positions: %s%n", docId, termId, positionsList);
+                    // Construct the line without text labels and commas
+                    String line = String.format("%d\t%d\t%s%n", docId, termId, positionsList);
 
                     writer.write(line);
                 }
             }
         }
     }
+
 
 }

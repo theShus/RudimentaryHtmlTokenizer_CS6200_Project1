@@ -1,5 +1,5 @@
-import fileProcessing.FileProcessor;
-import fileProcessing.StopWordsLoader;
+import documentTokenizing.FileProcessor;
+import documentTokenizing.StopWordsLoader;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         final String outputPath = "src/main/resources/output";
-        final String inputFilePath = "src/main/resources/output";//todo make into cli
+        final String inputFilePath = "src/main/resources/smol_corpus";//todo make into cli
 
         //Part 1: Tokenizing Documents
         Set<String> stopWords = StopWordsLoader.loadStopWords("src/main/resources/stopped_words.txt");
