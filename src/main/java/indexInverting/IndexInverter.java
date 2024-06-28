@@ -9,24 +9,34 @@ import java.util.*;
 
 public class IndexInverter {
 
-    // invertedIndex: Maps TERMID to a map of DOCID to a list of positions within the document
-    // Example: { 1: { 100: [5, 15, 25], 101: [2, 18] }, 2: { 100: [3, 8, 12] } }
+    /**
+     invertedIndex: Maps TERMID to a map of DOCID to a list of positions within the document
+     Example: { 1: { 100: [5, 15, 25], 101: [2, 18] }, 2: { 100: [3, 8, 12] } }
+     */
     private final Map<Integer, Map<Integer, List<Integer>>> invertedIndex = new HashMap<>();
 
-    // termOffsets: Maps TERMID to the byte offset of its entry in term_index.txt
-    // Example: { 1: 0L, 2: 150L }
+    /**
+     termOffsets: Maps TERMID to the byte offset of its entry in term_index.txt
+     Example: { 1: 0L, 2: 150L }
+     */
     private final Map<Integer, Long> termOffsets = new HashMap<>();
 
-    // termFrequencies: Maps TERMID to the total number of occurrences of the term in the entire corpus
-    // Example: { 1: 50, 2: 35 }
+    /**
+     termFrequencies: Maps TERMID to the total number of occurrences of the term in the entire corpus
+     Example: { 1: 50, 2: 35 }
+     */
     private final Map<Integer, Integer> termFrequencies = new HashMap<>();
 
-    // docFrequencies: Maps TERMID to the number of documents in which the term appears
-    // Example: { 1: 10, 2: 8 }
+    /**
+     docFrequencies: Maps TERMID to the number of documents in which the term appears
+     Example: { 1: 10, 2: 8 }
+     */
     private final Map<Integer, Integer> docFrequencies = new HashMap<>();
 
 
-
+    /**
+     Reads the doc_index.txt file and constructs an inverted index mapping terms to their occurrences in documents.
+     */
     public void buildInvertedIndex(String docIndexPath) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get(docIndexPath));
         for (String line : lines) {
@@ -56,6 +66,9 @@ public class IndexInverter {
         }
     }
 
+    /**
+     Writes the inverted index to term_index.txt and term information to term_info.txt, including delta encoding for positions and document offsets.
+     */
     public void writeInvertedIndex(String termIndexPath, String termInfoPath) throws IOException {
         try (BufferedWriter termIndexWriter = new BufferedWriter(new FileWriter(termIndexPath));
              BufferedWriter termInfoWriter = new BufferedWriter(new FileWriter(termInfoPath))) {
